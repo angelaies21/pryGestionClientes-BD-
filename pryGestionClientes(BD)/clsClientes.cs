@@ -14,29 +14,25 @@ namespace GestionClientes_archivoCSV_
         private OleDbConnection conexion = new OleDbConnection();
         private OleDbCommand comando = new OleDbCommand();
         private OleDbDataAdapter adaptador = new OleDbDataAdapter();
-        private OleDbDataReader reader = null;
 
 
         private string CadenaConexion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Clientes.mdb";
         private string Tabla = "Lista";
 
-
-        //variables
+        //Declaro las Variables
         private Decimal deuda;
         private Int32 cantidad;
 
-        //PROPIEDADES
+        //Declaro las PROPIEDADES
         public Decimal TotalDeuda
         {
             get { return deuda; }
         }
-
-        public Int32 CantDeudores
+        public Int32 CantidadDeudores
         {
             get { return cantidad; }
         }
-
-        public Decimal PromDeuda
+        public Decimal PromedioDeuda
         {
             get { return deuda / cantidad; }
         }
@@ -45,41 +41,36 @@ namespace GestionClientes_archivoCSV_
 
         public void Listar(DataGridView Grilla)
         {
-
             try
             {
-                //Hacemos la conexión a la Base de Datos
-                conexion.ConnectionString = CadenaConexion;
-                conexion.Open();
+            //Hacemos la conexión a la Base de Datos
+            conexion.ConnectionString = CadenaConexion;
+            conexion.Open();
 
-                //Ejecutamos la conexión, le decimos que timpo de tabla usamos y cual tabla usamos
-                comando.Connection = conexion;
-                comando.CommandType = CommandType.TableDirect;
-                comando.CommandText = Tabla;
+            //Ejecutamos la conexión, le decimos que timpo de tabla usamos y cual tabla usamos
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.TableDirect;
+            comando.CommandText = Tabla;
 
-                //Adaptamos los datos de toda la tabla y se los cargamos a DS
-                adaptador = new OleDbDataAdapter(comando);
-                DataSet DS = new DataSet();             //data set llama a todos
-                adaptador.Fill(DS);
+            //Adaptamos los datos de toda la tabla y se los cargamos a DS
+            adaptador = new OleDbDataAdapter(comando);
+            DataSet DS = new DataSet();
+            adaptador.Fill(DS);
 
-                //Mostramos los datos en la grilla (cargamos la grilla)
-                Grilla.DataSource = DS.Tables[0];
+            //Mostramos los datos en la grilla (cargamos la grilla)
+            Grilla.DataSource = DS.Tables[0];
 
 
-                conexion.Close();
+            conexion.Close();
             }
-            catch (Exception e)
+            catch(Exception e) 
             {
                 MessageBox.Show(e.ToString());
-
             }
-
         }
-
 
         public void Deudores(DataGridView Grilla)
         {
-
             try
             {
                 //Hacemos la conexión a la Base de Datos
@@ -94,11 +85,10 @@ namespace GestionClientes_archivoCSV_
                 OleDbDataReader DR = comando.ExecuteReader();
                 Grilla.Rows.Clear();
 
-
                 cantidad = 0;
                 deuda = 0;
 
-                if (DR.HasRows) //el hasRows pregunta si tiene datos o fila ejecuta lo otro
+                if (DR.HasRows)
                 {
                     while (DR.Read())
                     {
@@ -108,22 +98,18 @@ namespace GestionClientes_archivoCSV_
                             cantidad++;
                             deuda = deuda + DR.GetDecimal(2);
                         }
+
                     }
+
                 }
 
                 conexion.Close();
             }
-
-
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
-
             }
-
         }
-
-
 
     }
 }

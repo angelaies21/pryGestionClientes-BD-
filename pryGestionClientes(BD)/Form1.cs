@@ -16,31 +16,32 @@ namespace GestionClientes_archivoCSV_
         {
             InitializeComponent();
         }
-      
 
-        private void listadosDeTodosLosCleintesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void agregarNuevosClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+  
+        }
+
+        private void listadoDeTodosLosClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form formulario = new frmListadoClientes();
             formulario.Show();
         }
 
-        private void listadosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void listadoDeClientesDeudoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form formulario = new frmDeudores();
             formulario.Show();
-
         }
 
-        private void sistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-
-        }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
 
         }
     }
 }
-

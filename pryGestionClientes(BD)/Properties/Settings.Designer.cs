@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace pryGestionClientes_BD_.Properties
+namespace GestionClientes_archivoCSV_.Properties
 {
 
 

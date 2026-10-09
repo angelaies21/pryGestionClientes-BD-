@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace pryGestionClientes_BD_
+namespace GestionClientes_archivoCSV_
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace pryGestionClientes_BD_
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form());
+            Application.Run(new frmGestorClientesArcivosCSV());
         }
     }
 }
