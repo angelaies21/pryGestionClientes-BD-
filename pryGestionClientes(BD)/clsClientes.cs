@@ -21,8 +21,16 @@ namespace GestionClientes_archivoCSV_
         private string Tabla = "Lista";
 
         //Declaro las Variables
-        private Decimal deuda;
+        private Decimal deuda; //acumulacion de todas las deudas
         private Int32 cantidad;
+
+        private Int32 idCli;
+        private String Nom;
+        private Decimal deu; //deuda de cada usuario
+        private Decimal lim;
+        private Int32 idCui;
+
+
 
         //Declaro las PROPIEDADES
         public Decimal TotalDeuda
@@ -37,6 +45,41 @@ namespace GestionClientes_archivoCSV_
         {
             get { return deuda / cantidad; }
         }
+
+
+
+        public Int32 IdCliente
+        {
+            get { return idCli; }
+            set { idCli = value; }
+        }
+
+        public String Nombre
+        {
+            get { return Nombre; }
+            set { Nombre = value; }
+        }
+
+        public Decimal Deuda
+        {
+            get { return Deuda; }
+            set { Deuda = value; }
+        }
+
+
+        public Decimal limite
+        {
+            get { return limite; }
+            set { limite = value; }
+        }
+
+
+        public Int32 IdCiudad
+        {
+            get { return IdCiudad; }
+            set { IdCiudad = value; }
+        }
+
 
 
 
@@ -162,6 +205,55 @@ namespace GestionClientes_archivoCSV_
                 MessageBox.Show(e.ToString());
             }
         }
+
+
+        public void Buscar(Int32 IdCliente)
+        {
+            try
+            {
+                //Hacemos la conexión a la Base de Datos
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+
+                //Ejecutamos la conexión, le decimos que timpo de tabla usamos y cual tabla usamos
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = Tabla;
+
+                OleDbDataReader DR = comando.ExecuteReader();
+
+
+                idCli = 0;
+
+                if (DR.HasRows)
+                {
+                    while (DR.Read())
+                    {
+                        if (DR.GetInt32(0) == IdCliente)
+                        {
+                            idCli = DR.GetInt32(0);
+                            Nom = DR.GetString(1);
+                            deu = DR.GetDecimal(2);
+                            lim = DR.GetDecimal(3);
+                            idCui = DR.GetInt32(4);
+
+                        }
+
+                    }
+
+                }
+
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+
+
+
 
     }
 }

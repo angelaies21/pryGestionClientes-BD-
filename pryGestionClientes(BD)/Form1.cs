@@ -43,5 +43,11 @@ namespace GestionClientes_archivoCSV_
         {
 
         }
+
+        private void buscarCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmBuscar();
+            formulario.Show();
+        }
     }
 }
