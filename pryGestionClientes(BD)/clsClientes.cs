@@ -56,28 +56,28 @@ namespace GestionClientes_archivoCSV_
 
         public String Nombre
         {
-            get { return Nombre; }
-            set { Nombre = value; }
+            get { return Nom; }
+            set { Nom = value; }
         }
 
         public Decimal Deuda
         {
-            get { return Deuda; }
-            set { Deuda = value; }
+            get { return deu; }
+            set { deu = value; }
         }
 
 
         public Decimal limite
         {
-            get { return limite; }
-            set { limite = value; }
+            get { return lim; }
+            set { lim = value; }
         }
 
 
         public Int32 IdCiudad
         {
-            get { return IdCiudad; }
-            set { IdCiudad = value; }
+            get { return idCui; }
+            set { idCui = value; }
         }
 
 
@@ -252,6 +252,48 @@ namespace GestionClientes_archivoCSV_
         }
 
 
+        public void Agregar()
+        {
+            try
+            {
+                //Hacemos la conexión a la Base de Datos
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+
+                //Ejecutamos la conexión, le decimos que timpo de tabla usamos y cual tabla usamos
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = Tabla;
+
+                //Adaptamos los datos de toda la tabla y se los cargamos a DS
+                adaptador = new OleDbDataAdapter(comando);
+                DataSet DS = new DataSet();
+                adaptador.Fill(DS, Tabla);
+
+                DataTable tabla = DS.Tables[Tabla];
+                DataRow fila = tabla.NewRow();
+
+
+                //llamamos a la fila
+                fila["Nombre"] = Nom; //asigna los valores a las variables
+                fila["Deuda"] = 0;
+                fila["Limite"] = lim;
+                fila["idCiudad"] = idCui;
+
+
+                tabla.Rows.Add(fila);
+                OleDbCommandBuilder conciliaCmbios = new OleDbCommandBuilder(adaptador);//coincilia los campo
+                adaptador.Update(DS, Tabla); //hago efectivo el cambio antes
+
+
+
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
 
 
 
