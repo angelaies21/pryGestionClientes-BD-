@@ -38,5 +38,20 @@ namespace GestionClientes_archivoCSV_
             clsCiudad ciu = new clsCiudad();
             ciu.Listar(cmbCiudad);
         }
+
+        private void btnCargarSQL_Click(object sender, EventArgs e)
+        {
+            clsClientes x = new clsClientes();
+            x.Nombre = txtNom.Text;
+            x.limite = Convert.ToDecimal(txtLim.Text);
+            x.IdCiudad = Convert.ToInt32(cmbCiudad.SelectedValue);
+            x.AgregarSQL();
+
+            MessageBox.Show("Datos agregados correctamente");
+
+            txtNom.Text = "";
+            txtLim.Text = "";
+            cmbCiudad.SelectedIndex = 0;
+        }
     }
 }

@@ -296,6 +296,109 @@ namespace GestionClientes_archivoCSV_
         }
 
 
+        public void Estructura(Int32 idCliente)
+        {
+            try
+            {
+                string Sql = "";
+
+                //Hacemos la conexión a la Base de Datos
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+
+                //Ejecutamos la conexión, le decimos que timpo de tabla usamos y cual tabla usamos
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = Sql;
+
+                comando.ExecuteNonQuery(); //ejecuta toda la instrucciones
+
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+
+        public void Modificar(Int32 idCliente)
+        {
+            try
+            {
+                string Sql = "UPDATE Lista SET Limite = " + lim.ToString() + " WHERE idCliente = " + idCliente.ToString();
+
+                //Hacemos la conexión a la Base de Datos
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+
+                //Ejecutamos la conexión, le decimos que timpo de tabla usamos y cual tabla usamos
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = Sql;
+
+                comando.ExecuteNonQuery(); //ejecuta toda la instrucciones
+
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+
+        public void Eliminar(Int32 idCliente)
+        {
+            try
+            {
+                string Sql = " DELETE * FROM Lista WHERE idCliente = " + idCliente.ToString(); //borra los clientes
+
+                //Hacemos la conexión a la Base de Datos
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+
+                //Ejecutamos la conexión, le decimos que timpo de tabla usamos y cual tabla usamos
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = Sql;
+
+                comando.ExecuteNonQuery(); //ejecuta toda la instrucciones
+
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+
+        public void AgregarSQL()
+        {
+            try
+            {
+               // string Sql = " INSERT INTO Lista (Nombre, Deuda, Limite, idCiudad) VALUES (´" + Nom + "´ , 0, " +lim.ToString() +" ,"+ idCui.ToString() +")" ;
+                string Sql = "INSERT INTO Lista (Nombre, Deuda, Limite, idCiudad) VALUES (´maria´ , 0, 15000 ,2)";
+
+                //Hacemos la conexión a la Base de Datos
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+
+                //Ejecutamos la conexión, le decimos que timpo de tabla usamos y cual tabla usamos
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = Sql;
+
+                comando.ExecuteNonQuery(); //ejecuta toda la instrucciones
+
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
 
     }
 }

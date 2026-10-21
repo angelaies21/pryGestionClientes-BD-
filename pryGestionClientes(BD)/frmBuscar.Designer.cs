@@ -32,12 +32,15 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblNom = new System.Windows.Forms.Label();
             this.lblDeuda = new System.Windows.Forms.Label();
-            this.lblListaCredito = new System.Windows.Forms.Label();
+            this.lblLimite = new System.Windows.Forms.Label();
             this.grbDtosCli = new System.Windows.Forms.GroupBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblDeudas = new System.Windows.Forms.Label();
-            this.lblListasCred = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.lblDeudas = new System.Windows.Forms.Label();
+            this.txtLimite = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.grbDtosCli.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +58,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(285, 84);
+            this.btnBuscar.Location = new System.Drawing.Point(284, 87);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(91, 27);
             this.btnBuscar.TabIndex = 2;
@@ -83,22 +86,22 @@
             this.lblDeuda.TabIndex = 5;
             this.lblDeuda.Text = "Deuda";
             // 
-            // lblListaCredito
+            // lblLimite
             // 
-            this.lblListaCredito.AutoSize = true;
-            this.lblListaCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblListaCredito.Location = new System.Drawing.Point(43, 125);
-            this.lblListaCredito.Name = "lblListaCredito";
-            this.lblListaCredito.Size = new System.Drawing.Size(114, 16);
-            this.lblListaCredito.TabIndex = 7;
-            this.lblListaCredito.Text = "Lista de credito";
+            this.lblLimite.AutoSize = true;
+            this.lblLimite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLimite.Location = new System.Drawing.Point(43, 125);
+            this.lblLimite.Name = "lblLimite";
+            this.lblLimite.Size = new System.Drawing.Size(122, 16);
+            this.lblLimite.TabIndex = 7;
+            this.lblLimite.Text = "Limite de credito";
             // 
             // grbDtosCli
             // 
-            this.grbDtosCli.Controls.Add(this.lblListasCred);
-            this.grbDtosCli.Controls.Add(this.lblDeudas);
             this.grbDtosCli.Controls.Add(this.lblNombre);
-            this.grbDtosCli.Controls.Add(this.lblListaCredito);
+            this.grbDtosCli.Controls.Add(this.txtLimite);
+            this.grbDtosCli.Controls.Add(this.lblDeudas);
+            this.grbDtosCli.Controls.Add(this.lblLimite);
             this.grbDtosCli.Controls.Add(this.lblDeuda);
             this.grbDtosCli.Controls.Add(this.lblNom);
             this.grbDtosCli.Location = new System.Drawing.Point(25, 131);
@@ -108,30 +111,6 @@
             this.grbDtosCli.TabStop = false;
             this.grbDtosCli.Text = "Datos del cliente:";
             // 
-            // lblNombre
-            // 
-            this.lblNombre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblNombre.Location = new System.Drawing.Point(198, 24);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(165, 26);
-            this.lblNombre.TabIndex = 8;
-            // 
-            // lblDeudas
-            // 
-            this.lblDeudas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDeudas.Location = new System.Drawing.Point(198, 69);
-            this.lblDeudas.Name = "lblDeudas";
-            this.lblDeudas.Size = new System.Drawing.Size(165, 26);
-            this.lblDeudas.TabIndex = 9;
-            // 
-            // lblListasCred
-            // 
-            this.lblListasCred.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblListasCred.Location = new System.Drawing.Point(198, 115);
-            this.lblListasCred.Name = "lblListasCred";
-            this.lblListasCred.Size = new System.Drawing.Size(165, 26);
-            this.lblListasCred.TabIndex = 10;
-            // 
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(216, 35);
@@ -139,17 +118,78 @@
             this.txtCodigo.Size = new System.Drawing.Size(159, 20);
             this.txtCodigo.TabIndex = 10;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(30, 348);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(91, 27);
+            this.btnEliminar.TabIndex = 11;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(173, 348);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(91, 27);
+            this.btnEditar.TabIndex = 12;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(319, 348);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(91, 27);
+            this.btnGuardar.TabIndex = 13;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // lblDeudas
+            // 
+            this.lblDeudas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDeudas.Location = new System.Drawing.Point(185, 68);
+            this.lblDeudas.Name = "lblDeudas";
+            this.lblDeudas.Size = new System.Drawing.Size(165, 26);
+            this.lblDeudas.TabIndex = 10;
+            // 
+            // txtLimite
+            // 
+            this.txtLimite.Location = new System.Drawing.Point(191, 121);
+            this.txtLimite.Name = "txtLimite";
+            this.txtLimite.Size = new System.Drawing.Size(159, 20);
+            this.txtLimite.TabIndex = 12;
+            this.txtLimite.TextChanged += new System.EventHandler(this.txtLimite_TextChanged);
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblNombre.Location = new System.Drawing.Point(185, 32);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(165, 26);
+            this.lblNombre.TabIndex = 13;
+            // 
             // frmBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 363);
+            this.ClientSize = new System.Drawing.Size(471, 406);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.grbDtosCli);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblCod);
             this.Name = "frmBuscar";
             this.Text = "frmBuscar";
+            this.Load += new System.EventHandler(this.frmBuscar_Load);
             this.grbDtosCli.ResumeLayout(false);
             this.grbDtosCli.PerformLayout();
             this.ResumeLayout(false);
@@ -163,11 +203,14 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label lblDeuda;
-        private System.Windows.Forms.Label lblListaCredito;
+        private System.Windows.Forms.Label lblLimite;
         private System.Windows.Forms.GroupBox grbDtosCli;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblListasCred;
-        private System.Windows.Forms.Label lblDeudas;
         private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtLimite;
+        private System.Windows.Forms.Label lblDeudas;
     }
 }

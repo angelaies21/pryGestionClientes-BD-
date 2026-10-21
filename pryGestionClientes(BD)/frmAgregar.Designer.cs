@@ -35,6 +35,7 @@
             this.txtLim = new System.Windows.Forms.TextBox();
             this.txtNom = new System.Windows.Forms.TextBox();
             this.btnCargar = new System.Windows.Forms.Button();
+            this.btnCargarSQL = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNom
@@ -69,12 +70,12 @@
             this.cmbCiudad.FormattingEnabled = true;
             this.cmbCiudad.Location = new System.Drawing.Point(145, 215);
             this.cmbCiudad.Name = "cmbCiudad";
-            this.cmbCiudad.Size = new System.Drawing.Size(152, 21);
+            this.cmbCiudad.Size = new System.Drawing.Size(202, 21);
             this.cmbCiudad.TabIndex = 4;
             // 
             // txtLim
             // 
-            this.txtLim.Location = new System.Drawing.Point(145, 143);
+            this.txtLim.Location = new System.Drawing.Point(145, 133);
             this.txtLim.Name = "txtLim";
             this.txtLim.Size = new System.Drawing.Size(152, 20);
             this.txtLim.TabIndex = 5;
@@ -83,24 +84,37 @@
             // 
             this.txtNom.Location = new System.Drawing.Point(145, 62);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(152, 20);
+            this.txtNom.Size = new System.Drawing.Size(202, 20);
             this.txtNom.TabIndex = 6;
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(222, 275);
+            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargar.Location = new System.Drawing.Point(242, 273);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(75, 23);
+            this.btnCargar.Size = new System.Drawing.Size(82, 28);
             this.btnCargar.TabIndex = 7;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnCargarSQL
+            // 
+            this.btnCargarSQL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargarSQL.Location = new System.Drawing.Point(80, 273);
+            this.btnCargarSQL.Name = "btnCargarSQL";
+            this.btnCargarSQL.Size = new System.Drawing.Size(102, 28);
+            this.btnCargarSQL.TabIndex = 8;
+            this.btnCargarSQL.Text = "Cargar SQL";
+            this.btnCargarSQL.UseVisualStyleBackColor = true;
+            this.btnCargarSQL.Click += new System.EventHandler(this.btnCargarSQL_Click);
+            // 
             // frmAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 333);
+            this.ClientSize = new System.Drawing.Size(378, 333);
+            this.Controls.Add(this.btnCargarSQL);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.txtLim);
@@ -125,5 +139,6 @@
         private System.Windows.Forms.TextBox txtLim;
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.Button btnCargarSQL;
     }
 }
