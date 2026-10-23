@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -82,8 +83,44 @@ namespace GestionClientes_archivoCSV_
         }
 
 
-       
 
+        public String Buscar(Int32 IdCliente)
+        {
+            try
+            {
+                //Hacemos la conexión a la Base de Datos
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+
+                //Ejecutamos la conexión, le decimos que timpo de tabla usamos y cual tabla usamos
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = Tabla;
+
+                OleDbDataReader DR = comando.ExecuteReader();
+                String Resultado = "";
+
+                if (DR.HasRows)
+                {
+                    while (DR.Read())
+                    {
+                        if (DR.GetInt32(0) == IdCliente)
+                        {
+                            Resultado= DR.GetString(0);
+                        }
+
+                    }
+
+                }
+
+                conexion.Close();
+                return Resultado;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
 
 
 

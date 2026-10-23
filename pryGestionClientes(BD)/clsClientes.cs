@@ -400,5 +400,46 @@ namespace GestionClientes_archivoCSV_
             }
         }
 
+
+        public void ListarClientes(DataGridView Grilla)
+        {
+            try
+            {
+                //Hacemos la conexión a la Base de Datos
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+
+                //Ejecutamos la conexión, le decimos que timpo de tabla usamos y cual tabla usamos
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = Tabla;
+
+                OleDbDataReader DR = comando.ExecuteReader();
+                Grilla.Rows.Clear();
+
+                cantidad = 0;
+                deuda = 0;
+
+                if (DR.HasRows)
+                {
+                    while (DR.Read())
+                    {
+                        
+                            Grilla.Rows.Add(DR.GetInt32(0), DR.GetString(1), DR.GetDecimal(2));
+                            cantidad++;
+                            deuda = deuda + DR.GetDecimal(2);
+                        
+
+                    }
+
+                }
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
     }
 }
