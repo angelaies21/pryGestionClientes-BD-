@@ -85,6 +85,7 @@ namespace GestionClientes_archivoCSV_
 
         public void Listar(DataGridView Grilla)
         {
+           
             try
             {
             //Hacemos la conexión a la Base de Datos
@@ -107,11 +108,46 @@ namespace GestionClientes_archivoCSV_
 
             conexion.Close();
             }
-            catch(Exception e) 
+
+            //catch(Exception e) 
+            //{
+            //MessageBox.Show(e.ToString());
+            // }
+
+            //catch (Exception e)
+            //{
+            // MessageBox.Show(e.ToString());
+            //}
+            catch (FormatException)  //cualquier error q hay pasa x aca 
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("No se puede convertir el tipo de dato");
+            }
+            catch (DivideByZeroException)
+            {
+                MessageBox.Show("No se puede dividir por cero");
+            }
+            catch (ArgumentException) //arg no puede se4r null
+            {
+                MessageBox.Show("El valor del argumento no puede ser nulo");
+            }
+            catch (IndexOutOfRangeException) //vectores
+            {
+                MessageBox.Show("Indice fuera de la matriz"); // se usa para los vectores
+            }
+            finally //lo q se pone aca se va a ejecutar en ambos casos SE EJECUTA SIEMPRE
+            {
+                //lo que va aca se ejecuta siempre, tanto por try como por catch por ejemplo resetar variables, cerrar conexión, etc...
             }
         }
+
+
+
+
+
+
+
+
+
 
         public void Deudores(DataGridView Grilla)
         {
@@ -440,6 +476,50 @@ namespace GestionClientes_archivoCSV_
                 MessageBox.Show(e.ToString());
             }
         }
+
+
+
+        public void ListarDataSet(DataGridView Grilla)
+        {
+
+            try
+            {
+                //Hacemos la conexión a la Base de Datos
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+
+                //Ejecutamos la conexión, le decimos que timpo de tabla usamos y cual tabla usamos
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = Tabla;
+
+                //Adaptamos los datos de toda la tabla y se los cargamos a DS
+                adaptador = new OleDbDataAdapter(comando);
+                DataSet DS = new DataSet();
+                adaptador.Fill(DS); //TRAE LA TABLA COMPLETA Y LO CARGA en la grilla
+
+
+                if (DS.Tables[0].Rows.Count > 0) //si ese dataSet tiene filas
+                {
+                    foreach (DataRow x in DS.Tables[0].Rows) //recore el objeto (ds) dataRow o sea fila de datos.variBLE X in es en, luego
+                    {
+                        Grilla.Rows.Add(x["Nombre"], x["idCiudad"], x["Deuda"]); //en el dataset llama por nombre del campo" no la ubi como el dataReau
+                    }
+                }
+                conexion.Close();
+            
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+           
+        }
+
+
+
+
+
 
     }
 }

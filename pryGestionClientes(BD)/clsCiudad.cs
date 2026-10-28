@@ -118,7 +118,8 @@ namespace GestionClientes_archivoCSV_
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                return e.ToString();               
+                
             }
         }
 

@@ -20,7 +20,7 @@ namespace GestionClientes_archivoCSV_
         private void btnListar_Click(object sender, EventArgs e)
         {
             clsClientes objClientes = new clsClientes();
-            objClientes.Listar(dgvGrilla);
+            objClientes.ListarClientes(dgvGrilla);
         }
 
         private void btn_Reporte_Click(object sender, EventArgs e)
@@ -28,6 +28,18 @@ namespace GestionClientes_archivoCSV_
             clsClientes objClientes = new clsClientes();
             objClientes.ReporteClientes();
             MessageBox.Show("Reporte Generado Correctamente");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            clsClientes objClientes = new clsClientes();
+            objClientes.ListarDataSet(dgvGrilla2);
+        }
+
+        private void dgvGrilla2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
