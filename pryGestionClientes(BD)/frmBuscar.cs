@@ -26,27 +26,28 @@ namespace GestionClientes_archivoCSV_
         {
             clsClientes x = new clsClientes();
 
-            Int32 cliente = Convert.ToInt32(txtCodigo.Text);
-            x.Buscar(cliente);
+            Int32 cliente = Convert.ToInt32(txtCodigo.Text); //creamos el objeto x que trae el archivo (la clase) clsClientes que es donde tenemos todos los procedimientos
+            x.Buscar(cliente);  //declaramos una variable para poder poner el txtCodigo en x.Buscar(ACA)
 
-            if (x.IdCliente != 0)
+            if (x.IdCliente != 0) //para eso en la clase pusimos idCli = 0 si cambia se muestran los datos aca
             {
                 lblNombre.Text = x.Nombre;
-                lblDeudas.Text = x.Deuda.ToString();
+                lblDeuda.Text = x.Deuda.ToString();
                 txtLimite.Text = x.limite.ToString();
             }
              
             else
             {                
                 lblNombre.Text = "";
-                lblDeudas.Text = "";
+                lblDeuda.Text = "";
                 txtLimite.Text = "";
                 MessageBox.Show("Cliente no encontrado");
             }
 
-            btnEliminar.Enabled = true; //btn q se bloquee
+            txtLimite.Enabled = true; //btn q se bloquee
+            btnEliminar.Enabled = true;
             btnEditar.Enabled = true;
-
+            btnGuardar.Enabled = false;
         }
 
         private void txtLimite_TextChanged(object sender, EventArgs e)
@@ -64,15 +65,18 @@ namespace GestionClientes_archivoCSV_
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            Int32 id = Convert.ToInt32(txtCodigo.Text);
             clsClientes x = new clsClientes();
             x.limite = Convert.ToDecimal(txtLimite.Text); //se lo manda al txt Modificar desde la clase
-            x.Modificar(Convert.ToInt32(txtCodigo.Text)); 
-            btnGuardar.Enabled=false;
+            x.Modificar(id);          
             MessageBox.Show("Los datos se guardaron correctamente");
+
+            limpiar();
         }
 
         private void frmBuscar_Load(object sender, EventArgs e)
         {
+            btnBuscar.Enabled = false;
             btnEliminar.Enabled = false; //btn q se bloquee
             btnEditar.Enabled = false;
             btnGuardar.Enabled = false;
@@ -80,10 +84,38 @@ namespace GestionClientes_archivoCSV_
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            Int32 id = Convert.ToInt32(txtCodigo.Text);
             clsClientes x = new clsClientes();
+            x.Eliminar(id);
+            MessageBox.Show("Dato eliminado exitosamente");
 
-            x.Eliminar(Convert.ToInt32(txtCodigo.Text));
-            MessageBox.Show("El cliente se elimino correctamente");
+            limpiar(); ;
         }
+
+       
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text != "")
+            {
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                btnBuscar.Enabled = false;
+            }
+        }
+
+
+        private void limpiar()
+        {
+            txtLimite.Text = "";
+            lblNombre.Text = "";
+            lblDeuda.Text = "";
+            txtLimite.ReadOnly = true;
+            btnEliminar.Enabled = false;
+            btnEditar.Enabled = false;
+            btnGuardar.Enabled = false;
+        }
+
     }
 }

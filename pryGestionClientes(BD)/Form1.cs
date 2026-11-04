@@ -50,5 +50,10 @@ namespace GestionClientes_archivoCSV_
             Form formulario = new frmBuscar();
             formulario.Show();
         }
+
+        private void frmGestorClientesArcivosCSV_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
