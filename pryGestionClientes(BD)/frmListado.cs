@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GestionClientes_archivoCSV_
 {
-    public partial class frmDatos : Form
+    public partial class frmListado : Form
     {
-        public frmDatos()
+        public frmListado()
         {
             InitializeComponent();
         }
@@ -64,6 +64,11 @@ namespace GestionClientes_archivoCSV_
             //Ahora si llamamos al procedimiento
             clsClientes x = new clsClientes();
             x.Imprimir(e);
+        }
+
+        private void frmDatos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -25,7 +25,7 @@ namespace GestionClientes_archivoCSV_
 
         private void listadoDeTodosLosClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formulario = new frmListadoClientes();
+            Form formulario = new frmListado();
             formulario.Show();
         }
 

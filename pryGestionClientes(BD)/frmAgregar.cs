@@ -42,7 +42,7 @@ namespace GestionClientes_archivoCSV_
         private void btnCargarSQL_Click(object sender, EventArgs e)
         {
             clsClientes x = new clsClientes();
-            x.Nombre = txtNom.Text;
+            x.Nombre = txtNom.Text;     
             x.limite = Convert.ToDecimal(txtLim.Text);
             x.IdCiudad = Convert.ToInt32(cmbCiudad.SelectedValue);
             x.AgregarSQL();

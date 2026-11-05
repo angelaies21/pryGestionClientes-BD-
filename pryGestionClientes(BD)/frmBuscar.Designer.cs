@@ -60,7 +60,7 @@
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Location = new System.Drawing.Point(379, 107);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(121, 33);
             this.btnBuscar.TabIndex = 2;
@@ -103,6 +103,7 @@
             // 
             // grbDtosCli
             // 
+            this.grbDtosCli.BackColor = System.Drawing.Color.LavenderBlush;
             this.grbDtosCli.Controls.Add(this.lblNombre);
             this.grbDtosCli.Controls.Add(this.txtLimite);
             this.grbDtosCli.Controls.Add(this.lblDeuda);
@@ -110,9 +111,9 @@
             this.grbDtosCli.Controls.Add(this.lblTitDeuda);
             this.grbDtosCli.Controls.Add(this.lblTitNombre);
             this.grbDtosCli.Location = new System.Drawing.Point(33, 161);
-            this.grbDtosCli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbDtosCli.Margin = new System.Windows.Forms.Padding(4);
             this.grbDtosCli.Name = "grbDtosCli";
-            this.grbDtosCli.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbDtosCli.Padding = new System.Windows.Forms.Padding(4);
             this.grbDtosCli.Size = new System.Drawing.Size(543, 239);
             this.grbDtosCli.TabIndex = 9;
             this.grbDtosCli.TabStop = false;
@@ -130,7 +131,7 @@
             // txtLimite
             // 
             this.txtLimite.Location = new System.Drawing.Point(255, 149);
-            this.txtLimite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLimite.Margin = new System.Windows.Forms.Padding(4);
             this.txtLimite.Name = "txtLimite";
             this.txtLimite.Size = new System.Drawing.Size(211, 22);
             this.txtLimite.TabIndex = 12;
@@ -148,7 +149,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(267, 48);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(211, 22);
             this.txtCodigo.TabIndex = 10;
@@ -158,7 +159,7 @@
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Location = new System.Drawing.Point(40, 428);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(121, 33);
             this.btnEliminar.TabIndex = 11;
@@ -170,7 +171,7 @@
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Location = new System.Drawing.Point(231, 428);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(121, 33);
             this.btnEditar.TabIndex = 12;
@@ -182,7 +183,7 @@
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(425, 428);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(121, 33);
             this.btnGuardar.TabIndex = 13;
@@ -194,6 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(628, 500);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEditar);
@@ -202,7 +204,7 @@
             this.Controls.Add(this.grbDtosCli);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblCod);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmBuscar";
             this.Text = "frmBuscar";
             this.Load += new System.EventHandler(this.frmBuscar_Load);

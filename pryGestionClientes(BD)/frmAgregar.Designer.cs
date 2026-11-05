@@ -75,7 +75,7 @@
             // 
             this.cmbCiudad.FormattingEnabled = true;
             this.cmbCiudad.Location = new System.Drawing.Point(181, 221);
-            this.cmbCiudad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCiudad.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCiudad.Name = "cmbCiudad";
             this.cmbCiudad.Size = new System.Drawing.Size(200, 24);
             this.cmbCiudad.TabIndex = 4;
@@ -83,7 +83,7 @@
             // txtLim
             // 
             this.txtLim.Location = new System.Drawing.Point(181, 135);
-            this.txtLim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLim.Margin = new System.Windows.Forms.Padding(4);
             this.txtLim.Name = "txtLim";
             this.txtLim.Size = new System.Drawing.Size(201, 22);
             this.txtLim.TabIndex = 5;
@@ -91,7 +91,7 @@
             // txtNom
             // 
             this.txtNom.Location = new System.Drawing.Point(181, 47);
-            this.txtNom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNom.Margin = new System.Windows.Forms.Padding(4);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(264, 22);
             this.txtNom.TabIndex = 6;
@@ -100,7 +100,7 @@
             // 
             this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargar.Location = new System.Drawing.Point(317, 336);
-            this.btnCargar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCargar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(109, 34);
             this.btnCargar.TabIndex = 7;
@@ -112,7 +112,7 @@
             // 
             this.btnCargarSQL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargarSQL.Location = new System.Drawing.Point(139, 336);
-            this.btnCargarSQL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCargarSQL.Margin = new System.Windows.Forms.Padding(4);
             this.btnCargarSQL.Name = "btnCargarSQL";
             this.btnCargarSQL.Size = new System.Drawing.Size(136, 34);
             this.btnCargarSQL.TabIndex = 8;
@@ -124,6 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(485, 394);
             this.Controls.Add(this.btnCargarSQL);
             this.Controls.Add(this.btnCargar);
@@ -133,8 +134,9 @@
             this.Controls.Add(this.lblCiudad);
             this.Controls.Add(this.lblLim);
             this.Controls.Add(this.lblNom);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAgregar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAgregar";
             this.Load += new System.EventHandler(this.frmAgregar_Load);
             this.ResumeLayout(false);

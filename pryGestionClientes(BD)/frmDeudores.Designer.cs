@@ -136,6 +136,7 @@
             // 
             // dgvClientes
             // 
+            this.dgvClientes.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -153,30 +154,32 @@
             this.Column1.HeaderText = "Código";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 180;
+            this.Column1.Width = 120;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Nombre y Apellido";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 180;
+            this.Column2.Width = 140;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Deuda";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 180;
+            this.Column4.Width = 140;
             // 
             // frmDeudores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(727, 590);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDeudores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDeudores";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
