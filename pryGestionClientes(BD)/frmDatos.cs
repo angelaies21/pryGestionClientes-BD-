@@ -44,31 +44,26 @@ namespace GestionClientes_archivoCSV_
             objClientes.ListarDataSet(dgvtable);
         }
 
+
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            prtVentana.Document = prtDocumento;
+            prtVentana.ShowDialog(); //creamos la ventana para seleccionar la impresora
+            prtDocumento.PrinterSettings = prtVentana.PrinterSettings; //le asignamos a la impresora que seleccionamos en la ventana
+            prtDocumento.Print();  //imprimimos
+            MessageBox.Show("Reporte Impreso Correctamente");
 
-            if (prtVentana.ShowDialog() == DialogResult.OK)
-            {
-                prtDocumento.PrinterSettings = prtVentana.PrinterSettings;
-
-                prtDocumento.Print();
-
-                MessageBox.Show("Reporte Impreso Correctamente");
-            }
         }
+
 
         private void prtDocumento_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            System.Drawing.Printing.PageSettings pg = new System.Drawing.Printing.PageSettings();
-            {
+            //  Ejemplo de escritura directa
+            //  Font TipoLetra = new Font("Arial", 12);
+            //  e.Graphics.DrawString("Hola", TipoLetra, Brushes.Blue, 200, 200);
 
-                //Font fuente = new Font("Arial", 12, FontStyle.Bold);
-                //e.Graphics.DrawString("Hola, Mundo!", fuente, Brushes.Blue,200,200);
-
-                clsClientes x = new clsClientes();
-                x.Imprimir(e);
-            }
+            //Ahora si llamamos al procedimiento
+            clsClientes x = new clsClientes();
+            x.Imprimir(e);
         }
     }
 }

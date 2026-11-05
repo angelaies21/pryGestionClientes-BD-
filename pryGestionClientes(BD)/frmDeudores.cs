@@ -26,9 +26,6 @@ namespace GestionClientes_archivoCSV_
             lblPromedio.Text = x.PromedioDeuda.ToString("0.00");
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

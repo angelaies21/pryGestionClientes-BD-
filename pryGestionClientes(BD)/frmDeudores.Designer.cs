@@ -55,9 +55,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dgvClientes);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(695, 565);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
@@ -66,7 +66,7 @@
             // btnListar
             // 
             this.btnListar.Location = new System.Drawing.Point(443, 502);
-            this.btnListar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnListar.Margin = new System.Windows.Forms.Padding(4);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(185, 28);
             this.btnListar.TabIndex = 7;
@@ -123,7 +123,6 @@
             this.label2.Size = new System.Drawing.Size(132, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Cantidad de clientes:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -142,11 +141,11 @@
             this.Column1,
             this.Column2,
             this.Column4});
-            this.dgvClientes.Location = new System.Drawing.Point(20, 23);
-            this.dgvClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvClientes.Location = new System.Drawing.Point(33, 23);
+            this.dgvClientes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersWidth = 51;
-            this.dgvClientes.Size = new System.Drawing.Size(655, 310);
+            this.dgvClientes.Size = new System.Drawing.Size(595, 310);
             this.dgvClientes.TabIndex = 0;
             // 
             // Column1
@@ -154,21 +153,21 @@
             this.Column1.HeaderText = "Código";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 150;
+            this.Column1.Width = 180;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Nombre y Apellido";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
+            this.Column2.Width = 180;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Deuda";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
+            this.Column4.Width = 180;
             // 
             // frmDeudores
             // 
@@ -176,7 +175,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 590);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDeudores";
             this.Text = "frmDeudores";
             this.groupBox1.ResumeLayout(false);
