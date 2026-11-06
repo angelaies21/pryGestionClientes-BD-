@@ -42,7 +42,7 @@
             // 
             this.lblNom.AutoSize = true;
             this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNom.Location = new System.Drawing.Point(13, 47);
+            this.lblNom.Location = new System.Drawing.Point(4, 47);
             this.lblNom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(160, 20);
@@ -90,7 +90,7 @@
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(181, 47);
+            this.txtNom.Location = new System.Drawing.Point(181, 45);
             this.txtNom.Margin = new System.Windows.Forms.Padding(4);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(264, 22);
@@ -99,7 +99,7 @@
             // btnCargar
             // 
             this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(317, 336);
+            this.btnCargar.Location = new System.Drawing.Point(318, 310);
             this.btnCargar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(109, 34);
@@ -111,7 +111,7 @@
             // btnCargarSQL
             // 
             this.btnCargarSQL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargarSQL.Location = new System.Drawing.Point(139, 336);
+            this.btnCargarSQL.Location = new System.Drawing.Point(120, 310);
             this.btnCargarSQL.Margin = new System.Windows.Forms.Padding(4);
             this.btnCargarSQL.Name = "btnCargarSQL";
             this.btnCargarSQL.Size = new System.Drawing.Size(136, 34);
@@ -125,7 +125,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(485, 394);
+            this.ClientSize = new System.Drawing.Size(466, 377);
             this.Controls.Add(this.btnCargarSQL);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.txtNom);
