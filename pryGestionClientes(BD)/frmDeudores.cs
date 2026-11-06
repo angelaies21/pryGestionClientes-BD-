@@ -19,6 +19,7 @@ namespace GestionClientes_archivoCSV_
 
         private void btnListar_Click(object sender, EventArgs e)
         {
+            // 5 - boton listar, que trae todos los clientes y los muestra en la grilla
             clsClientes x = new clsClientes();
             x.Deudores(dgvClientes);
             lblCantidad.Text = x.CantidadDeudores.ToString();

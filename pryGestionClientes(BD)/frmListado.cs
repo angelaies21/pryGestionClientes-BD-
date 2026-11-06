@@ -47,6 +47,9 @@ namespace GestionClientes_archivoCSV_
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+
+            // 6 - btn IMPRIMIR
+
             prtVentana.ShowDialog(); //creamos la ventana para seleccionar la impresora
             prtDocumento.PrinterSettings = prtVentana.PrinterSettings; //le asignamos a la impresora que seleccionamos en la ventana
             prtDocumento.Print();  //imprimimos
@@ -62,6 +65,9 @@ namespace GestionClientes_archivoCSV_
             //  e.Graphics.DrawString("Hola", TipoLetra, Brushes.Blue, 200, 200);
 
             //Ahora si llamamos al procedimiento
+
+
+            // 7 - PRNT DOCUMENTO
             clsClientes x = new clsClientes();
             x.Imprimir(e);
         }
