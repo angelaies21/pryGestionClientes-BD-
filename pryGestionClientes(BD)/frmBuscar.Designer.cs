@@ -59,10 +59,10 @@
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(379, 107);
+            this.btnBuscar.Location = new System.Drawing.Point(379, 103);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(121, 33);
+            this.btnBuscar.Size = new System.Drawing.Size(121, 37);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -130,17 +130,17 @@
             // 
             // txtLimite
             // 
-            this.txtLimite.Location = new System.Drawing.Point(255, 149);
+            this.txtLimite.Location = new System.Drawing.Point(247, 154);
             this.txtLimite.Margin = new System.Windows.Forms.Padding(4);
             this.txtLimite.Name = "txtLimite";
-            this.txtLimite.Size = new System.Drawing.Size(211, 22);
+            this.txtLimite.Size = new System.Drawing.Size(212, 22);
             this.txtLimite.TabIndex = 12;
             this.txtLimite.TextChanged += new System.EventHandler(this.txtLimite_TextChanged);
             // 
             // lblDeuda
             // 
             this.lblDeuda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDeuda.Location = new System.Drawing.Point(247, 84);
+            this.lblDeuda.Location = new System.Drawing.Point(247, 96);
             this.lblDeuda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeuda.Name = "lblDeuda";
             this.lblDeuda.Size = new System.Drawing.Size(220, 32);
@@ -151,7 +151,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(267, 48);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(211, 22);
+            this.txtCodigo.Size = new System.Drawing.Size(233, 22);
             this.txtCodigo.TabIndex = 10;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 

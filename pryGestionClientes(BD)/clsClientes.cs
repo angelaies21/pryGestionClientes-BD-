@@ -15,7 +15,7 @@ namespace GestionClientes_archivoCSV_
     internal class clsClientes
     {
 
-        // 1 - ESTO LO CONECTA CON ACCES, PARA PODER USAR LA BASE DE DATOS, SE USA EL NAMESPACE System.Data.OleDb
+       
         private OleDbConnection conexion = new OleDbConnection();
         private OleDbCommand comando = new OleDbCommand();
         private OleDbDataAdapter adaptador = new OleDbDataAdapter();
@@ -24,7 +24,7 @@ namespace GestionClientes_archivoCSV_
         private string CadenaConexion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Clientes.mdb";
         private string Tabla = "Lista";
 
-        //2 - Declaro las Variables
+       
         private Decimal deuda; //acumulacion de todas las deudas
         private Int32 cantidad;
 
@@ -36,7 +36,7 @@ namespace GestionClientes_archivoCSV_
 
         
 
-        // 3 - Declaro las PROPIEDADES
+        //  Declaro las PROPIEDADES
         public Decimal TotalDeuda
         {
             get { return deuda; }
@@ -45,15 +45,10 @@ namespace GestionClientes_archivoCSV_
         {
             get { return cantidad; }
         }
-        public Decimal PromedioDeuda //no hace falta ponerlo
+        public Decimal PromedioDeuda
         {
             get { return deuda / cantidad; }
         }
-
-       //  public Int32 Cantidad  AGREGAR
-        // {
-        //   get { return cantidad; }
-        // }
 
         public Int32 IdCliente
         {
@@ -86,7 +81,7 @@ namespace GestionClientes_archivoCSV_
         }
 
 
-        // 5 - LISTAR TODOS LOS CLIENTES EN LA GRILLA solo poner el while y lo anterior
+        //  LISTAR TODOS LOS CLIENTES EN LA GRILLA 
         public void Listar(DataGridView Grilla)
         {
             try
@@ -112,7 +107,7 @@ namespace GestionClientes_archivoCSV_
                     Grilla.Rows.Add( 
                         DR.GetInt32(0),
                         DR.GetString(1),
-                        "Ciudad", //sacar y poner    DR.GetInt32(4)     debajo 
+                        "Ciudad", 
                         DR.GetDecimal(2),
                         DR.GetDecimal(3)
                     );
@@ -271,7 +266,7 @@ namespace GestionClientes_archivoCSV_
             }
         }
 
-        // 4 - boton listar, que trae todos los clientes y los muestra en la grilla
+        
         public void ListarCliente(DataGridView Grilla)
         {
            
@@ -593,7 +588,7 @@ namespace GestionClientes_archivoCSV_
             }
         }
 
-        // 7 - IMPRIMIR part2
+        
         public void Imprimir(PrintPageEventArgs reporte)
         {
             try
