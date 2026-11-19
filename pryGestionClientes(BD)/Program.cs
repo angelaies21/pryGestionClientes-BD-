@@ -18,5 +18,15 @@ namespace GestionClientes_archivoCSV_
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmGestorClientesArcivosCSV());
         }
+
+
+        /*
+            Application.Run(new Form1());*/
+
+
+
+
+
+
     }
 }
